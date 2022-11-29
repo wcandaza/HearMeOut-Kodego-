@@ -1,4 +1,13 @@
-
+body {
+    margin: 0px;
+    padding: 0px;
+}
+.navBar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 0;
+}
 .navbar-toggler {
     background-color: aliceblue;
     color: white ;
@@ -9,15 +18,20 @@
 }
 
 .main-container {
-    margin-top: 75px;
+    margin-top: 0px;
+    position: relative;
+    background-color: #fdca40;
+}
+.container-fluid {
+    padding: 0px;
 }
 /* Hero Section */
 /* Hero Section */
 .hero {
     margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 25px;
-    background-color: #fdca40;
+    text-align: justify;
+    /* padding: 30px; */
+    /* border-radius: 25px; */
     height: 80vh;
 }
 /* Contemplate Section */
