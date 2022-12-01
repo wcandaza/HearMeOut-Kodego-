@@ -3,11 +3,15 @@ body {
     padding: 0px;
 }
 .navBar {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1;
-    margin-bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    padding: 10px;
 }
+
+
 .navbar-toggler {
     background-color: aliceblue;
     color: white ;
@@ -17,18 +21,39 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2815, 10, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+#hero-container {
+    position: relative;
+    padding-top: 150px;
+    height: 100vh;
+    background-color: #10aee5;
+}
 #hero-container hr {
     border-width: 5px;
+}
+
+#hero-container .hero-title {
+    font-size: 50px;
 }
 
 .mental-image {
     width: 100%;
 }
+
+.road-image {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+
 /* Contemplate Section */
 /* Contemplate Section */
 #question-container {
     background-color: #2d1161;
     color: white;
+    position: relative;
+    padding-top: 150px;
+
 }
 /* Features Section */
 /* Features Section */
@@ -81,3 +106,5 @@ body {
 }
 /* Footer Section */
 /* Footer Section */
+
+
