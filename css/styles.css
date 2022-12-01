@@ -50,12 +50,19 @@ body {
     background-color: #F79824;
 }
 /* Time Capsule */
+#time-capsule-container-create {
+    margin: 5px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #33A1FD;
+}
+
 #time-capsule-container {
     margin: 5px;
     padding: 30px;
-
     border-radius: 15px;
     background-color: #33A1FD;
+    display: none;
 }
 
 /* Connect Section */
@@ -67,16 +74,22 @@ body {
 
 #connect-page #volunteer-container {
     margin: 5px;
+    padding: 20px;
     border-radius: 5px;
-    background-color: #606060;
-    color: white;
+    width: 40%;
+    background-color: #f5f0cf;
+    color: rgb(126, 122, 122);
+    text-align: center;
 
 }
 #connect-page #professional-container {
     margin: 5px;
+    padding: 20px;
     border-radius: 5px;
+    width: 40%;
     background-color: #606060;
     color: white;
+    text-align: center;
  
 }
 /* Footer Section */
