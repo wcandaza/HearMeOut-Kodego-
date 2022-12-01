@@ -89,7 +89,7 @@
          </div>
          <!-- time capsule -->
          <div class="col-md mb-5" id="time-capsule-container">
-           <form>
+           <form action="#" method="">
             <h1 class="text-center text-light">Time Capsule</h1>
             <hr>
              <!-- Date input -->
@@ -112,7 +112,7 @@
          
              <!-- Form send button -->
              <div class="d-grid">
-               <button class="btn btn-success btn-lg" type="submit" id="timeCapsuleStoreBtn">Store</button>
+               <button class="btn btn-success btn-lg" type="button" id="timeCapsuleStoreBtn">Store</button>
              </div>
            </form>
          </div>
@@ -126,7 +126,13 @@
       <p>Or someone who will listen to you?</p>
       <p>A volunteer civilian will be available to hear you out shortly.</p>
       <p>Your identity will remain anonymous.</p>
-      <button>Connect</button>
+      <button onclick="enableChatWindow()">Connect</button>
+    </div>
+    <!-- chat when enabled -->
+    <div id="chat-window">
+      <div id="chatContainerUser"></div>
+      <input type="text" id="inputChatUser">
+      <button onclick="sendMessageFunctionUser()">send</button>
     </div>
     <div id="professional-container">
       <p>Connect with a professional</p>

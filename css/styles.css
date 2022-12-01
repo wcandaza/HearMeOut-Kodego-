@@ -81,6 +81,19 @@ body {
     padding-top: 100px;
 
 }
+#chat-window {
+    display: none;
+    padding: 20px;
+    width: 40%;
+    height: 80vh;
+    border: black 1px solid;
+}
+#chatContainerUser {
+    height: 60vh;
+    /* margin: 20px; */
+    border: black 1px solid;
+    overflow: auto;
+}
 /* Features Section */
 /* Features Section */
 #features {
