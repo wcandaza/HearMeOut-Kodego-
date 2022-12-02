@@ -80,11 +80,14 @@
           <h1 class="text-light">Quotes</h1>
           
          </div>
-         <!-- existing and create time capsule -->
+         <!--  create and existingtime capsule -->
          <div class="col-md mb-5" id="time-capsule-container-create">
           <h1 class="text-center text-light">Time Capsule</h1>
           <p class="text-light">You can create time capsule to store and open it at a set date.</p>
           <button onclick="cTimeCapsule()" class="btn btn-warning">create</button>
+          <br/>
+          <span>Jaunary 1,2023</span>
+          <button>Open</button>
           
          </div>
          <!-- time capsule -->
@@ -111,8 +114,10 @@
              </div>
          
              <!-- Form send button -->
-             <div class="d-grid">
-               <button class="btn btn-success btn-lg" type="button" id="timeCapsuleStoreBtn">Store</button>
+             <div class="d-grid d-flex flex-row-reverse">
+               <!-- <button class="btn btn-success btn-lg" type="button" id="timeCapsuleStoreBtn">Store</button> -->
+               <button class="btn btn-danger">cancel</button>
+               <button class="btn btn-success" type="button" id="timeCapsuleStoreBtn">store</button>
              </div>
            </form>
          </div>
@@ -121,12 +126,15 @@
    <!-- connect -->
    <section class=" bg-warning text-dark vh-md-100 p-5 p-lg-0 pt-lg-5 text-center text-sm-start vh-100 d-flex justify-content-around" id="connect-page">
     <div id="volunteer-container">
-      <p>Connect with a volunteer</p>
-      <p>Do you need someone to talk to?</p>
-      <p>Or someone who will listen to you?</p>
-      <p>A volunteer civilian will be available to hear you out shortly.</p>
-      <p>Your identity will remain anonymous.</p>
-      <button onclick="enableChatWindow()">Connect</button>
+      <div class="align-self-center">
+        <p>Connect with a volunteer</p>
+        <p>Do you need someone to talk to?</p>
+        <p>Or someone who will listen to you?</p>
+        <p>A volunteer civilian will be available to hear you out shortly.</p>
+        <p>Your identity will remain anonymous.</p>
+        <button onclick="enableChatWindow()">Connect</button>
+      </div>
+      
     </div>
     <!-- chat when enabled -->
     <div id="chat-window">
