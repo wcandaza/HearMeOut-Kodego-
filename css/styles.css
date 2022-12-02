@@ -119,6 +119,7 @@ body {
     padding: 30px;
     border-radius: 15px;
     background-color: #33A1FD;
+    height: 75vh;
 }
 
 #time-capsule-container {
@@ -126,6 +127,7 @@ body {
     padding: 30px;
     border-radius: 15px;
     background-color: #33A1FD;
+    height: 75vh;
     display: none;
 }
 
@@ -141,6 +143,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     width: 40%;
+    height: 76vh;
     background-color: #f5f0cf;
     color: rgb(126, 122, 122);
     text-align: center;
@@ -151,6 +154,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     width: 40%;
+    height: 75vh;
     background-color: #606060;
     color: white;
     text-align: center;

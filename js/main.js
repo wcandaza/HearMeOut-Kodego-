@@ -62,26 +62,28 @@ const timeCapsuleStoreBtn = document.querySelector("#timeCapsuleStoreBtn");
 timeCapsuleStoreBtn.addEventListener("click", storeFunction);
 function storeFunction() {
     const enteredDate = document.querySelector("#date").value;
-    // store to local
-    localStorage.setItem("inputDate", enteredDate)
-    let currentdate = new Date();
-    localStorage.setItem("currentDate", currentdate)
-    // get stored data
-    let getDate = localStorage.getItem("inputDate")
-    let getCurrentDate = localStorage.getItem("currentDate")
     date1 = new Date(enteredDate)
     date2 = new Date()
     result = date1-date2
+
+    //store to local
+    localStorage.setItem("date1", JSON.stringify(date1))
+    localStorage.setItem("date2", JSON.stringify(date2))
+    //get stored data from local
+    let a = JSON.parse(localStorage.getItem("date1"))
+    let b = JSON.parse(localStorage.getItem("date2"))
+    console.log(new Date(a)- new Date (b))
+
     if (result >= 86400000){
         console.log("cannot open the capsule")
     } else {
         console.log("you can open the capsule")
     }
-    console.log(date1)
-    console.log(date2)
-    console.log(result)
-    console.log(getDate)
-    console.log(getCurrentDate)
-    console.log(getDate - getCurrentDate)
+    
+    //disabling store window and enabling create and existing window
+    let x = document.querySelector("#time-capsule-container");
+    x.style.display = "none";
+    let y = document.querySelector("#time-capsule-container-create");
+    y.style.display = "block";
     
 }
