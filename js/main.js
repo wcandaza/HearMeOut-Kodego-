@@ -6,84 +6,119 @@ function enableChatWindow() {
     let chatWindow = document.querySelector("#chat-window");
     chatWindow.style.display= "block"
 }
-
 ///////end of enabled chat window
-
-let chatContainerUser = document.querySelector("#chatContainerUser");
-let inputChatUser = document.querySelector("#inputChatUser");
-
-//local storage key increment
-let key = localStorage.getItem("incrementing key");
-
-//get key from local storage
-let newKey = "";
-
-//render chat message on landing
-// let x = localStorage.key("incrementing key")
-// loadchatMessages();
-
-function sendMessageFunctionUser() {
-    //change key for local storage and store the chat key 
-    let add1ToKey = key++;
-    localStorage.setItem("incrementing key", add1ToKey);
-    let newKey = "chatInputUser" + add1ToKey;
-    //store to local storage
-    localStorage.setItem(newKey, inputChatUser.value);   
-    loadchatMessages();
-}
-
-function loadchatMessages() {
-    //load chat user's chat message in chat box
-    let chatDivUser = document.createElement("div");
-    let chatPUser = document.createElement("p");
-    chatContainerUser.appendChild(chatDivUser);
-    chatDivUser.appendChild(chatPUser);
-    //add attribute to user's chat input
-    chatDivUser.classList = "userChatDiv";
-    //display message on chat box
-    let x = "chatInputUser" + key;
-    console.log("this is the key " + x)
-    let getChatLocalStorage = localStorage.getItem(x);
-    let displayUserChat = "User: " + getChatLocalStorage;
-    chatPUser.textContent = displayUserChat;
-    console.log("this is the value pair " + getChatLocalStorage)
-    
-}
+    let inputChatUser = document.querySelector("#inputChatUser");
+    let chat = []
+    function sendMessageFunctionUser() {
+        chat.push({
+            name: "user",
+            content: inputChatUser.value,
+            Date: new Date()
+        })
+        localStorage.setItem('messages', JSON.stringify(chat))
+        displayMessages()
+    }
+    function displayMessages() {
+        while (chatContainerUser.firstChild){
+            chatContainerUser.removeChild(chatContainerUser.firstChild);
+        }
+        for (let i = 0; i < chat.length; i++) {
+        let parsedChat = JSON.parse(localStorage.getItem('messages')) 
+        let chatContainerUser = document.querySelector("#chatContainerUser")
+        let createDiv = document.createElement('Div')
+        let createA = document.createElement('Div')
+        let createSpan = document.createElement('span')
+        let createPDate = document.createElement('p')
+        chatContainerUser.appendChild(createDiv)
+        createDiv.appendChild(createA)
+        createDiv.appendChild(createSpan)
+        createDiv.appendChild(createPDate)
+        createDiv.classList = "perChatContainer"
+        createA.classList = "perChatUser"
+        createSpan.classList = "perChatContent"
+        createPDate.classList = "perChatDate"
+        createA.textContent = parsedChat[i].name
+        createSpan.textContent = parsedChat[i].content
+        createPDate.textContent = parsedChat[i].Date
+          }
+        
+    }
 //=========================end of chat=================================//
-//========================time capsule=================================//
-function cTimeCapsule() {
-    let x = document.querySelector("#time-capsule-container");
-    x.style.display = "block";
-    let y = document.querySelector("#time-capsule-container-create");
-    y.style.display = "none";
 
-}
+
+
+
+//========================time capsule=================================//
+//declare elements from index
+const TCcontainer = document.querySelector("#time-capsule-container");
+const TCcontainerCreate = document.querySelector("#time-capsule-container-create");
+const existineCapsuteContainer = document.querySelector("#existineCapsuteContainer");
+const enteredDate = document.querySelector("#date");
 const timeCapsuleStoreBtn = document.querySelector("#timeCapsuleStoreBtn");
 timeCapsuleStoreBtn.addEventListener("click", storeFunction);
+//create elements
+let createTCStoredDiv = document.createElement('Div')
+let createOpenButtn = document.createElement('button');
+let createTCStoredSpan = document.createElement('span')
+//added element's class
+createTCStoredDiv.classList = "timeCapsuleStoredDiv";
+createTCStoredSpan.classList = "timeCapsuleStoredDate";
+//get stored data from local
+let parsedDate1 = JSON.parse(localStorage.getItem("date1"))
+let parsedDate2 = JSON.parse(localStorage.getItem("date2"))
+//function for storing to time capsule
 function storeFunction() {
-    const enteredDate = document.querySelector("#date").value;
-    date1 = new Date(enteredDate)
+    date1 = new Date(enteredDate.value)
     date2 = new Date()
     result = date1-date2
-
+    
     //store to local
     localStorage.setItem("date1", JSON.stringify(date1))
     localStorage.setItem("date2", JSON.stringify(date2))
-    //get stored data from local
-    let a = JSON.parse(localStorage.getItem("date1"))
-    let b = JSON.parse(localStorage.getItem("date2"))
-    console.log(new Date(a)- new Date (b))
-
+    //store time capsule message to local storage
+    let createdMessageCapsule = document.querySelector("#createdMessageCapsule")
+    localStorage.setItem("timeCapsuleMessage", JSON.stringify(createdMessageCapsule.value))
+    
     if (result >= 86400000){
-        console.log("cannot open the capsule")
+        //append elements
+        existineCapsuteContainer.appendChild(createTCStoredDiv) 
+        createTCStoredDiv.appendChild(createTCStoredSpan)
+        createTCStoredSpan.textContent = parsedDate1;
+        //open button
+        setTimeout(openBtn,result); 
+        
+        
     } else {
-        console.log("you can open the capsule")
+        existineCapsuteContainer.appendChild(createTCStoredDiv) 
+        createTCStoredDiv.appendChild(createTCStoredSpan)
+        createTCStoredDiv.appendChild(createOpenButtn)
+        createTCStoredSpan.textContent = parsedDate1;
+        //open button
+        createOpenButtn.innerHTML = "Open";
+        createOpenButtn.addEventListener("click", openCapsuleMessage)
     }
-    
+    function openBtn() {
+        createTCStoredDiv.appendChild(createOpenButtn)
+        createOpenButtn.innerHTML = "Open"
+        createOpenButtn.addEventListener("click", openCapsuleMessage)
+    }
+
+    function openCapsuleMessage() {
+        createOpenButtn.style.display = "none";
+        let createCapsuleMessageDiv = document.createElement('div');
+        createCapsuleMessageDiv.classList = "displayCapsuleMessage";
+        createTCStoredDiv.appendChild(createCapsuleMessageDiv)
+        let parsedTimeCapsuleMessage = localStorage.getItem("timeCapsuleMessage")
+        createCapsuleMessageDiv.textContent = parsedTimeCapsuleMessage;
+        console.log(parsedTimeCapsuleMessage);
+    }
     //disabling store window and enabling create and existing window
-    let x = document.querySelector("#time-capsule-container");
-    x.style.display = "none";
-    let y = document.querySelector("#time-capsule-container-create");
-    y.style.display = "block";
+    TCcontainer.style.display = "none";
+    TCcontainerCreate.style.display = "block";
     
+}
+//function for enabling the create time capsule window
+function createTCfunction() {
+    TCcontainer.style.display = "block";
+    TCcontainerCreate.style.display = "none";
 }
