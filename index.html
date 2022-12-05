@@ -65,31 +65,71 @@
   </section>
 
   <!-- Questions Section-->
-  <section class=" p-5 vh-100 bg-warning d-sm-flex justify-content-center align-items-center" id="question-container">
+  <section class="p-lg-5 vh-sm-100 vh-100 d-sm-flex justify-content-center align-items-center" id="question-container">
     <div class="container">
-
-
+      <div class="background-container">
+        <div class="row row-wrap pop-outin">
+          <div class="line col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2 clas>Feeling Stress?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Little interest or pleasure
+              in doing things?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Hopeless?</h2>
+          </div>
+          <div class="col-md-6 text-lg-center text-center text-light mb-lg-5">
+            <h2>Fear failure?</h2>
+          </div>
+          <div class="col-md-6 text-lg-center text-center text-light mb-lg-5">
+            <h2>Too tired?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>No appetite?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Depressed?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Trouble concentrating?</h2>
+          </div>
+          <div class="col-md-6 text-lg-center text-center text-light mb-lg-5">
+            <h2>Fidgety or Restless?</h2>
+          </div>
+          <div class="col-md-6 text-lg-center text-center text-light mb-lg-5">
+            <h2>Overeating?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Sleeping too much?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Thought about
+              hurting yourself?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Trouble falling asleep?</h2>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
 
   <!-- Features Section-->
-  <section class="p-5 vh-sm-100 bg-dark d-sm-flex justify-content-center align-items-center" id="time-capsule">
+  <section class="p-5 p-lg-6 vh-sm-100 bg-dark d-sm-flex justify-content-center align-items-center" id="time-capsule">
     <div class="container">
       <div class="row justify-content-between ">
         <div class="col-md text-center mb-5" id="qoutes-container">
-
-          <div class="quotesBox">
             <h1 class="text-light">Quotes</h1>
-          </div>
-          <p id="quotesDisplay"></p>
-
+            <p id="quotesDisplay"></p>
         </div>
         <!--  create and existingtime capsule -->
         <div class="col-md mb-5" id="time-capsule-container-create">
           <h1 class="text-center text-light">Time Capsule</h1>
           <p class="text-light">You can create time capsule to store and open it at a set date.</p>
-          <button onclick="createTCfunction()" class="btn btn-warning">create</button>
+          <button onclick="createTCfunction()" class="btn btn-md w-25  btn-warning">Create</button>
+          <br />
           <br />
           <div id="existineCapsuteContainer">
             <div class="timeCapsuleStoredDiv">
@@ -123,10 +163,10 @@
             </div>
 
             <!-- Form send button -->
-            <div class="d-grid d-flex flex-row-reverse">
+            <div class="d-grid d-flex flex-row-reverse gap-2">
               <!-- <button class="btn btn-success btn-lg" type="button" id="timeCapsuleStoreBtn">Store</button> -->
-              <button class="btn btn-danger" type="button">cancel</button>
-              <button class="btn btn-success" type="button" id="timeCapsuleStoreBtn">store</button>
+              <button class="btn btn-md w-25 btn-danger" type="button">Cancel</button>
+              <button class="btn btn-md w-25 btn-success" type="button" id="timeCapsuleStoreBtn">Store</button>
             </div>
           </form>
         </div>
@@ -141,7 +181,7 @@
         <p>Or someone who will listen to you?</p>
         <p>A volunteer civilian will be available to hear you out shortly.</p>
         <p>Your identity will remain anonymous.</p>
-        <button onclick="enableChatWindow()">Connect</button>
+        <button class="btn btn-md w-25 btn-success"  onclick="enableChatWindow()">Connect</button>
       </div>
 
     </div>
@@ -155,7 +195,7 @@
       <p>Connect with a professional</p>
       <p>Would you prefer a professional to help you further?</p>
       <p>If you wish to proceed, we may need to gather personal information as we find a professional near you.</p>
-      <button>Connect</button>
+      <button class="btn btn-md w-25 btn-success">Connect</button>
     </div>
   </section>
 
