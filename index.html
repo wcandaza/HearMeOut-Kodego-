@@ -41,7 +41,7 @@
     </div>
   </nav>
   <!-- MAIN CONTAINER -->
-    <section class="bg-warning text-center text-lg-start" id="hero-container">
+  <section class="bg-warning text-center text-lg-start" id="hero-container">
     <div class="container">
       <div class="d-lg-flex">
         <div class="">
@@ -58,64 +58,98 @@
             <span>Get Started</span>
           </button>
         </div>
-        <img
-          class="mental-image img-fluid w-50  d-lg-block d-none" 
-          src="img/mental2.png"
-          alt=""
-        />
+        <img class="mental-image img-fluid w-50  d-lg-block d-none" src="img/mental2.png" alt="" />
       </div>
     </div>
     <img src="img/road.png" alt="" width="100%" class="road-image">
   </section>
 
   <!-- Questions Section-->
-  <section class=" vh-100" id="question-container">
+  <section class="p-lg-5 vh-sm-100 vh-100 d-sm-flex justify-content-center align-items-center" id="question-container">
     <div class="container">
-     
-
+      <div class="background-container">
+        <div class="row row-wrap pop-outin">
+          <div class="line col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2 clas>Feeling Stress?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Little interest or pleasure
+              in doing things?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Hopeless?</h2>
+          </div>
+          <div class="col-md-6 text-lg-center text-center text-light mb-lg-5">
+            <h2>Fear failure?</h2>
+          </div>
+          <div class="col-md-6 text-lg-center text-center text-light mb-lg-5">
+            <h2>Too tired?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>No appetite?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Depressed?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Trouble concentrating?</h2>
+          </div>
+          <div class="col-md-6 text-lg-center text-center text-light mb-lg-5">
+            <h2>Fidgety or Restless?</h2>
+          </div>
+          <div class="col-md-6 text-lg-center text-center text-light mb-lg-5">
+            <h2>Overeating?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Sleeping too much?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Thought about
+              hurting yourself?</h2>
+          </div>
+          <div class="col-md-4 text-lg-center text-center text-light mb-lg-5">
+            <h2>Trouble falling asleep?</h2>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
 
   <!-- Features Section-->
-  <section class="p-5 vh-sm-100 bg-dark d-sm-flex justify-content-center align-items-center" id="time-capsule"> 
+  <section class="p-5 p-lg-6 vh-sm-100 bg-dark d-sm-flex justify-content-center align-items-center" id="time-capsule">
     <div class="container">
-       <div class="row justify-content-between ">
-         <div class="col-md text-center mb-5" id="qoutes-container">
-          <h1 class="text-light">Quotes</h1>
-          <p id="quotesDisplay">hello</p>
-          
-         </div>
-         <!--  create and existingtime capsule -->
-         <div class="col-md mb-5" id="time-capsule-container-create">
+      <div class="row justify-content-between ">
+        <div class="col-md text-center mb-5" id="qoutes-container">
+            <h1 class="text-light">Quotes</h1>
+            <p id="quotesDisplay"></p>
+        </div>
+        <!--  create and existingtime capsule -->
+        <div class="col-md mb-5" id="time-capsule-container-create">
           <h1 class="text-center text-light">Time Capsule</h1>
           <p class="text-light">You can create time capsule to store and open it at a set date.</p>
-          <button onclick="createTCfunction()" class="btn btn-warning">create</button>
-          <br/>
+          <button onclick="createTCfunction()" class="btn btn-md w-25  btn-warning">Create</button>
+          <br />
+          <br />
           <div id="existineCapsuteContainer">
-              <div class="timeCapsuleStoredDiv">
-                
-              </div>
+            <div class="timeCapsuleStoredDiv">
+
+            </div>
           </div>
-          
-         </div>
-         <!-- time capsule -->
-         <div class="col-md mb-5" id="time-capsule-container">
-           <form action="#" method="">
+
+        </div>
+        <!-- time capsule -->
+        <div class="col-md mb-5" id="time-capsule-container">
+          <form action="#" method="">
             <h1 class="text-center text-light">Time Capsule</h1>
             <hr>
-             <!-- Date input -->
-             <div class="mb-3">
-               <label class="form-label fw-bold text-light" for="date">Date</label>
-               <input class="form-control" id="date" type="date"/>
-               <div class="invalid-feedback">Date is required.</div>
-             </div>
-             
-             <!-- Message input -->
-             <div class="mb-3">
-               <label class="form-label fw-bold text-light" for="message">Message</label>
-               <textarea id="createdMessageCapsule" class="form-control h-25" rows="8" placeholder="Message to your future self."></textarea>
-             </div>
+            <!-- Date input -->
+            <div class="mb-3">
+              <label class="form-label fw-bold text-light" for="date">Date</label>
+              <input class="form-control" id="date" type="date" />
+              <div class="invalid-feedback">Date is required.</div>
+            </div>
+
 
              <!-- Form submissions success message -->
              <div class="d-none" id="submitSuccessMessage">
@@ -134,6 +168,32 @@
    </section>
    <!-- connect -->
    <section class=" p-5 vh-sm-100 bg-warning d-sm-flex justify-content-center align-items-center" id="connect-page">
+
+            <!-- Message input -->
+            <div class="mb-3">
+              <label class="form-label fw-bold text-light" for="message">Message</label>
+              <textarea id="createdMessageCapsule" class="form-control h-25" rows="8"
+                placeholder="Message to your future self."></textarea>
+            </div>
+
+            <!-- Form submissions success message -->
+            <div class="d-none" id="submitSuccessMessage">
+              <div class="text-center mb-3 text-light">Form submission successful!</div>
+            </div>
+
+            <!-- Form send button -->
+            <div class="d-grid d-flex flex-row-reverse gap-2">
+              <!-- <button class="btn btn-success btn-lg" type="button" id="timeCapsuleStoreBtn">Store</button> -->
+              <button class="btn btn-md w-25 btn-danger" type="button">Cancel</button>
+              <button class="btn btn-md w-25 btn-success" type="button" id="timeCapsuleStoreBtn">Store</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  </section>
+  <!-- connect -->
+  <section class=" p-5 vh-sm-100 bg-warning d-sm-flex justify-content-center align-items-center" id="connect-page">
+
     <div id="volunteer-container">
       <div class="align-self-center">
         <p>Connect with a volunteer</p>
@@ -141,9 +201,9 @@
         <p>Or someone who will listen to you?</p>
         <p>A volunteer civilian will be available to hear you out shortly.</p>
         <p>Your identity will remain anonymous.</p>
-        <button onclick="enableChatWindow()">Connect</button>
+        <button class="btn btn-md w-25 btn-success"  onclick="enableChatWindow()">Connect</button>
       </div>
-      
+
     </div>
     <!-- chat when enabled -->
     <div id="chat-window">
@@ -155,7 +215,7 @@
       <p>Connect with a professional</p>
       <p>Would you prefer a professional to help you further?</p>
       <p>If you wish to proceed, we may need to gather personal information as we find a professional near you.</p>
-      <button>Connect</button>
+      <button class="btn btn-md w-25 btn-success">Connect</button>
     </div>
   </section>
 
@@ -178,10 +238,10 @@
           <i class="fa-brands fa-instagram fa-2x text-light"></i>
         </div>
         <div class="col-md-3 text-lg-start text-center text-light">
-            <h5 class="fw-bold">HearMeOut</h5>
-            <p class="lead fs-6">Home</p>
-            <p class="lead fs-6">About Us</p>
-            <p class="lead fs-6">Contact Us</p>
+          <h5 class="fw-bold">HearMeOut</h5>
+          <p class="lead fs-6">Home</p>
+          <p class="lead fs-6">About Us</p>
+          <p class="lead fs-6">Contact Us</p>
         </div>
         <div class="col-md-3 text-lg-start text-center text-light">
           <h5 class="fw-bold">Information</h5>
