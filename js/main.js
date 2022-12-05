@@ -56,64 +56,46 @@ const existineCapsuteContainer = document.querySelector("#existineCapsuteContain
 const enteredDate = document.querySelector("#date");
 const timeCapsuleStoreBtn = document.querySelector("#timeCapsuleStoreBtn");
 timeCapsuleStoreBtn.addEventListener("click", storeFunction);
-const cancelBtn = document.querySelector("#cancel")
-cancelBtn.addEventListener('click', cancelFunction)
 //create elements
 let createTCStoredDiv = document.createElement('Div')
 let createOpenButtn = document.createElement('button');
-createOpenButtn.classList = "open-capsule"
-let createdTCStoredPara = document.createElement('p')
+let createTCStoredSpan = document.createElement('span')
 //added element's class
 createTCStoredDiv.classList = "timeCapsuleStoredDiv";
-createdTCStoredPara.classList = "timeCapsuleStoredDate";
-
+createTCStoredSpan.classList = "timeCapsuleStoredDate";
+//get stored data from local
+let parsedDate1 = JSON.parse(localStorage.getItem("date1"))
+let parsedDate2 = JSON.parse(localStorage.getItem("date2"))
 //function for storing to time capsule
 function storeFunction() {
-    //store to local
-    localStorage.setItem("selectedDate", JSON.stringify(enteredDate.value))
-    //subtracting current date from the selected date
-    date1 = new Date(JSON.parse(localStorage.getItem('selectedDate')))
+    date1 = new Date(enteredDate.value)
     date2 = new Date()
+    result = date1 - date2
 
-    result = date1-date2
-    console.log(result)
+    //store to local
+    localStorage.setItem("date1", JSON.stringify(date1))
+    localStorage.setItem("date2", JSON.stringify(date2))
     //store time capsule message to local storage
     let createdMessageCapsule = document.querySelector("#createdMessageCapsule")
     localStorage.setItem("timeCapsuleMessage", JSON.stringify(createdMessageCapsule.value))
-    
-    
-    
-    
-    
-    if (result >= 86400000){
-        while (existineCapsuteContainer.hasChildNodes()) {                  
-            existineCapsuteContainer.removeChild(existineCapsuteContainer.firstChild)
-        }
-        //append elements
-        existineCapsuteContainer.appendChild(createTCStoredDiv) 
-        createTCStoredDiv.appendChild(createdTCStoredPara)
-        createdTCStoredPara.textContent = JSON.parse(localStorage.getItem("selectedDate"));
 
+    if (result >= 86400000) {
+        //append elements
+        existineCapsuteContainer.appendChild(createTCStoredDiv)
+        createTCStoredDiv.appendChild(createTCStoredSpan)
+        createTCStoredSpan.textContent = parsedDate1;
         //open button
         setTimeout(openBtn, result);
 
 
     } else {
-
-        while (existineCapsuteContainer.hasChildNodes()) {                  
-            existineCapsuteContainer.removeChild(existineCapsuteContainer.firstChild)
-        }
-        //append elements
-        existineCapsuteContainer.appendChild(createTCStoredDiv) 
-        createTCStoredDiv.appendChild(createdTCStoredPara)
-
         existineCapsuteContainer.appendChild(createTCStoredDiv)
         createTCStoredDiv.appendChild(createTCStoredSpan)
-
         createTCStoredDiv.appendChild(createOpenButtn)
-        createdTCStoredPara.textContent = JSON.parse(localStorage.getItem('selectedDate'));
+        createTCStoredSpan.textContent = parsedDate1;
         //open button
-        openBtn()
+        createOpenButtn.innerHTML = "Open";
+        createOpenButtn.addEventListener("click", openCapsuleMessage)
     }
     function openBtn() {
         createTCStoredDiv.appendChild(createOpenButtn)
@@ -140,12 +122,6 @@ function createTCfunction() {
     TCcontainer.style.display = "block";
     TCcontainerCreate.style.display = "none";
 }
-
-
-//cancel button for creating time capsule
-function cancelFunction() {
-    TCcontainer.style.display = "none";
-    TCcontainerCreate.style.display = "block";
 
 //------------------------------Quotes of the Day-------------------------//
 let quote = [
@@ -197,5 +173,4 @@ function quotesList() {
 }
 function display() {
     quotesDisplay.innerHTML = quote[JSON.parse(localStorage.getItem("quotes"))];
-
 }
