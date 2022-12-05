@@ -41,7 +41,7 @@
     </div>
   </nav>
   <!-- MAIN CONTAINER -->
-    <section class="bg-warning text-center text-lg-start" id="hero-container">
+  <section class="bg-warning text-center text-lg-start" id="hero-container">
     <div class="container">
       <div class="d-lg-flex">
         <div class="">
@@ -58,11 +58,7 @@
             <span>Get Started</span>
           </button>
         </div>
-        <img
-          class="mental-image img-fluid w-50  d-lg-block d-none" 
-          src="img/mental2.png"
-          alt=""
-        />
+        <img class="mental-image img-fluid w-50  d-lg-block d-none" src="img/mental2.png" alt="" />
       </div>
     </div>
     <img src="img/road.png" alt="" width="100%" class="road-image">
@@ -71,69 +67,73 @@
   <!-- Questions Section-->
   <section class=" vh-100" id="question-container">
     <div class="container">
-     
+
 
     </div>
   </section>
 
 
   <!-- Features Section-->
-  <section class="p-5 vh-sm-100 bg-dark d-sm-flex justify-content-center align-items-center" id="time-capsule"> 
+  <section class="p-5 vh-sm-100 bg-dark d-sm-flex justify-content-center align-items-center" id="time-capsule">
     <div class="container">
-       <div class="row justify-content-between ">
-         <div class="col-md text-center mb-5" id="qoutes-container">
-          <h1 class="text-light">Quotes</h1>
-          <p id="quotesDisplay">hello</p>
-          
-         </div>
-         <!--  create and existingtime capsule -->
-         <div class="col-md mb-5" id="time-capsule-container-create">
+      <div class="row justify-content-between ">
+        <div class="col-md text-center mb-5" id="qoutes-container">
+
+          <div class="quotesBox">
+            <h1 class="text-light">Quotes</h1>
+          </div>
+          <p id="quotesDisplay"></p>
+
+        </div>
+        <!--  create and existingtime capsule -->
+        <div class="col-md mb-5" id="time-capsule-container-create">
           <h1 class="text-center text-light">Time Capsule</h1>
           <p class="text-light">You can create time capsule to store and open it at a set date.</p>
           <button onclick="createTCfunction()" class="btn btn-warning">create</button>
-          <br/>
+          <br />
           <div id="existineCapsuteContainer">
-              <div class="timeCapsuleStoredDiv">
-                
-              </div>
+            <div class="timeCapsuleStoredDiv">
+
+            </div>
           </div>
-          
-         </div>
-         <!-- time capsule -->
-         <div class="col-md mb-5" id="time-capsule-container">
-           <form action="#" method="">
+
+        </div>
+        <!-- time capsule -->
+        <div class="col-md mb-5" id="time-capsule-container">
+          <form action="#" method="">
             <h1 class="text-center text-light">Time Capsule</h1>
             <hr>
-             <!-- Date input -->
-             <div class="mb-3">
-               <label class="form-label fw-bold text-light" for="date">Date</label>
-               <input class="form-control" id="date" type="date"/>
-               <div class="invalid-feedback">Date is required.</div>
-             </div>
-             
-             <!-- Message input -->
-             <div class="mb-3">
-               <label class="form-label fw-bold text-light" for="message">Message</label>
-               <textarea id="createdMessageCapsule" class="form-control h-25" rows="8" placeholder="Message to your future self."></textarea>
-             </div>
+            <!-- Date input -->
+            <div class="mb-3">
+              <label class="form-label fw-bold text-light" for="date">Date</label>
+              <input class="form-control" id="date" type="date" />
+              <div class="invalid-feedback">Date is required.</div>
+            </div>
 
-             <!-- Form submissions success message -->
-             <div class="d-none" id="submitSuccessMessage">
-               <div class="text-center mb-3 text-light">Form submission successful!</div>
-             </div>
-         
-             <!-- Form send button -->
-             <div class="d-grid d-flex flex-row-reverse">
-               <!-- <button class="btn btn-success btn-lg" type="button" id="timeCapsuleStoreBtn">Store</button> -->
-               <button class="btn btn-danger" type="button">cancel</button>
-               <button class="btn btn-success" type="button" id="timeCapsuleStoreBtn">store</button>
-             </div>
-           </form>
-         </div>
-       </div>
-   </section>
-   <!-- connect -->
-   <section class=" p-5 vh-sm-100 bg-warning d-sm-flex justify-content-center align-items-center" id="connect-page">
+            <!-- Message input -->
+            <div class="mb-3">
+              <label class="form-label fw-bold text-light" for="message">Message</label>
+              <textarea id="createdMessageCapsule" class="form-control h-25" rows="8"
+                placeholder="Message to your future self."></textarea>
+            </div>
+
+            <!-- Form submissions success message -->
+            <div class="d-none" id="submitSuccessMessage">
+              <div class="text-center mb-3 text-light">Form submission successful!</div>
+            </div>
+
+            <!-- Form send button -->
+            <div class="d-grid d-flex flex-row-reverse">
+              <!-- <button class="btn btn-success btn-lg" type="button" id="timeCapsuleStoreBtn">Store</button> -->
+              <button class="btn btn-danger" type="button">cancel</button>
+              <button class="btn btn-success" type="button" id="timeCapsuleStoreBtn">store</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  </section>
+  <!-- connect -->
+  <section class=" p-5 vh-sm-100 bg-warning d-sm-flex justify-content-center align-items-center" id="connect-page">
     <div id="volunteer-container">
       <div class="align-self-center">
         <p>Connect with a volunteer</p>
@@ -143,7 +143,7 @@
         <p>Your identity will remain anonymous.</p>
         <button onclick="enableChatWindow()">Connect</button>
       </div>
-      
+
     </div>
     <!-- chat when enabled -->
     <div id="chat-window">
@@ -178,10 +178,10 @@
           <i class="fa-brands fa-instagram fa-2x text-light"></i>
         </div>
         <div class="col-md-3 text-lg-start text-center text-light">
-            <h5 class="fw-bold">HearMeOut</h5>
-            <p class="lead fs-6">Home</p>
-            <p class="lead fs-6">About Us</p>
-            <p class="lead fs-6">Contact Us</p>
+          <h5 class="fw-bold">HearMeOut</h5>
+          <p class="lead fs-6">Home</p>
+          <p class="lead fs-6">About Us</p>
+          <p class="lead fs-6">Contact Us</p>
         </div>
         <div class="col-md-3 text-lg-start text-center text-light">
           <h5 class="fw-bold">Information</h5>
