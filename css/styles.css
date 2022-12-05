@@ -107,7 +107,6 @@ body {
     padding: 30px;
     border-radius: 15px;
     background-color: #33A1FD;
-    height: 75vh;
 }
 
 #time-capsule-container {
@@ -115,7 +114,6 @@ body {
     padding: 30px;
     border-radius: 15px;
     background-color: #33A1FD;
-    height: 75vh;
     display: none;
 }
 
