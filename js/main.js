@@ -56,46 +56,64 @@ const existineCapsuteContainer = document.querySelector("#existineCapsuteContain
 const enteredDate = document.querySelector("#date");
 const timeCapsuleStoreBtn = document.querySelector("#timeCapsuleStoreBtn");
 timeCapsuleStoreBtn.addEventListener("click", storeFunction);
+const cancelBtn = document.querySelector("#cancel")
+cancelBtn.addEventListener('click', cancelFunction)
 //create elements
 let createTCStoredDiv = document.createElement('Div')
 let createOpenButtn = document.createElement('button');
-let createTCStoredSpan = document.createElement('span')
+createOpenButtn.classList = "open-capsule"
+let createdTCStoredPara = document.createElement('p')
 //added element's class
 createTCStoredDiv.classList = "timeCapsuleStoredDiv";
-createTCStoredSpan.classList = "timeCapsuleStoredDate";
-//get stored data from local
-let parsedDate1 = JSON.parse(localStorage.getItem("date1"))
-let parsedDate2 = JSON.parse(localStorage.getItem("date2"))
+createdTCStoredPara.classList = "timeCapsuleStoredDate";
+
 //function for storing to time capsule
 function storeFunction() {
-    date1 = new Date(enteredDate.value)
-    date2 = new Date()
-    result = date1 - date2
-
     //store to local
-    localStorage.setItem("date1", JSON.stringify(date1))
-    localStorage.setItem("date2", JSON.stringify(date2))
+    localStorage.setItem("selectedDate", JSON.stringify(enteredDate.value))
+    //subtracting current date from the selected date
+    date1 = new Date(JSON.parse(localStorage.getItem('selectedDate')))
+    date2 = new Date()
+
+    result = date1-date2
+    console.log(result)
     //store time capsule message to local storage
     let createdMessageCapsule = document.querySelector("#createdMessageCapsule")
     localStorage.setItem("timeCapsuleMessage", JSON.stringify(createdMessageCapsule.value))
-
-    if (result >= 86400000) {
+    
+    
+    
+    
+    
+    if (result >= 86400000){
+        while (existineCapsuteContainer.hasChildNodes()) {                  
+            existineCapsuteContainer.removeChild(existineCapsuteContainer.firstChild)
+        }
         //append elements
-        existineCapsuteContainer.appendChild(createTCStoredDiv)
-        createTCStoredDiv.appendChild(createTCStoredSpan)
-        createTCStoredSpan.textContent = parsedDate1;
+        existineCapsuteContainer.appendChild(createTCStoredDiv) 
+        createTCStoredDiv.appendChild(createdTCStoredPara)
+        createdTCStoredPara.textContent = JSON.parse(localStorage.getItem("selectedDate"));
+
         //open button
         setTimeout(openBtn, result);
 
 
     } else {
+
+        while (existineCapsuteContainer.hasChildNodes()) {                  
+            existineCapsuteContainer.removeChild(existineCapsuteContainer.firstChild)
+        }
+        //append elements
+        existineCapsuteContainer.appendChild(createTCStoredDiv) 
+        createTCStoredDiv.appendChild(createdTCStoredPara)
+
         existineCapsuteContainer.appendChild(createTCStoredDiv)
         createTCStoredDiv.appendChild(createTCStoredSpan)
+
         createTCStoredDiv.appendChild(createOpenButtn)
-        createTCStoredSpan.textContent = parsedDate1;
+        createdTCStoredPara.textContent = JSON.parse(localStorage.getItem('selectedDate'));
         //open button
-        createOpenButtn.innerHTML = "Open";
-        createOpenButtn.addEventListener("click", openCapsuleMessage)
+        openBtn()
     }
     function openBtn() {
         createTCStoredDiv.appendChild(createOpenButtn)
@@ -122,6 +140,12 @@ function createTCfunction() {
     TCcontainer.style.display = "block";
     TCcontainerCreate.style.display = "none";
 }
+
+
+//cancel button for creating time capsule
+function cancelFunction() {
+    TCcontainer.style.display = "none";
+    TCcontainerCreate.style.display = "block";
 
 //------------------------------Quotes of the Day-------------------------//
 let quote = [
@@ -173,4 +197,5 @@ function quotesList() {
 }
 function display() {
     quotesDisplay.innerHTML = quote[JSON.parse(localStorage.getItem("quotes"))];
+
 }

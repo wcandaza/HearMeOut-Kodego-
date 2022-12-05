@@ -8,6 +8,7 @@
     border-radius: 5px;
     box-shadow: 2px 3px #494343;
     background-color: rgb(48, 35, 145);
+    
 }
 #chatContainerUser {
     height: 60vh;
@@ -42,13 +43,31 @@
     overflow: auto;
 }
 .timeCapsuleStoredDiv {
-    border: 1px solid black;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
 }
 .timeCapsuleStoredDate {
-    margin: 20px 10px;
+    text-align: center;
+    margin: 0;
+    padding: 2rem;
+    font-weight: bold;
+    transition: 2s;
+    color: white;
+    border-radius: .25em;
+    background-image: linear-gradient(blue,white);
+    box-shadow: 2px 4px rgb(108, 114, 116);
 }
 .displayCapsuleMessage {
-    border: 1px solid black;
     text-align: center;
     padding: 20px;
+    font-style: italic;
+    font-size: 1.5em;
+    margin: 1em 0;
+    background-image: linear-gradient(rgb(96, 28, 142), rgb(179, 153, 153));
+    border-radius: .25em;
+    color: white;
+    box-shadow: 2px 4px rgb(108, 114, 116);
+
+    
 }
